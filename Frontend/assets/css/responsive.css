@@ -1,0 +1,158 @@
+@media only screen and (max-width : 767px) {
+    .navbar-light {
+        background-color: #222;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .navbar-light .navbar-toggler {
+        background: #fff;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        text-align: center;
+    }
+    .slider-text h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+    .home-slider button.owl-prev {
+        left: 25px;
+        top: auto;
+        height: 35px;
+        width: 35px;
+        font-size: 20px !important;
+        bottom: 20px;
+        line-height: 36px !important;
+    }
+    .home-slider button.owl-next {
+        right: 25px;
+        top: auto;
+        height: 35px;
+        width: 35px;
+        font-size: 20px !important;
+        bottom: 20px;
+        line-height: 36px !important;
+    }
+    .slider-text {
+        margin-top: 20px;
+    }
+    .slider-text p {
+        font-size: 20px;
+        margin: 20px 0 30px;
+    }
+    .slider-text .slider-btn {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+    .ptb-100 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .pb-70 {
+        padding-bottom: 20px;
+    }
+    .pt-100 {
+        padding-top: 50px;
+    }
+    .section-title h2 {
+        font-size: 25px;
+    }
+    .section-title {
+        margin-bottom: 40px;
+    }
+    .about-text {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+    .about-text ul {
+        margin: 0;
+    }
+    .about-text p {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .custom-btn {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+    .mr-25 {
+        margin-right: 15px;
+    }
+    .about-btn {
+        margin-top: 10px;
+    }
+    .single-counter i {
+        font-size: 45px;
+    }
+    .single-counter h3 {
+        font-size: 30px;
+    }
+    .single-counter p {
+        font-size: 15px;
+    }
+    .single-counter {
+        padding-left: 60px;
+        max-width: 160px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .portfolio-menu {
+        margin: 0px 0 30px;
+    }
+    .portfolio-menu li {
+        margin: 5px;
+        font-size: 14px;
+    }
+    .client-profile h3 {
+        font-size: 20px;
+    }
+    .feedback-text-content .feedback-text {
+        margin: 10px 0;
+    }
+    .feedback-slider .owl-dots {
+        bottom: 15px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .contact-form .send-btn {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+    .footer {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .bottom-footer {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+    .profile-img {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+    .about-text {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .about-text ul {
+        margin: 0;
+    }
+    .about-text p {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .custom-btn {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1200px) {
+    .about-text {
+        margin-top: 40px;
+    }
+}
+
+ 
