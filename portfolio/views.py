@@ -1,4 +1,19 @@
 from django.shortcuts import render
+from .models import (
+    HomeModel,
+    AboutModel,
+    SkillModel,
+    ServicesModel,
+    HandelModel,
+    PortfolioModel,
+    PortfolioCategoryModel,
+    ClientModel,
+    TeamModel,
+    CompamyBrandModel,
+    BlogModel,
+    ContactModel,
+    FooterModel
+)
 
 # Create your views here.
 
