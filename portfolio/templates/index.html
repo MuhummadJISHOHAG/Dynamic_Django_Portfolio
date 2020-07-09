@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
 
+{% load static %}
+{% include 'contact' %}
     {% block body %}
 
         <!-- Home slider -->
@@ -13,7 +14,7 @@
                             <div class="slider-text">
                                 <h1>{{home.title}}<br>{{home.subtitle}}</h1>
                                 <p>{{home.profession}}</p>
-                                <a href="#contact" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
+                                <a href="{% url 'portfolio:ContactPage' %}" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
                             </div>
                         </div>
                     </div>
@@ -388,45 +389,11 @@
             </div>
         </section>
         <!-- End Blog Section -->
-
-        <!-- Contact form section -->
-        <section id="contact" class="contact-section ptb-100">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Contact Us</h2>
-                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
-                </div>
-
-                <div class="contact-form">
-                    <form>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id=""  placeholder="Enter your name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id=""  placeholder="Enter your email">
-                                </div> 
-                            </div>
-                        </div>
-                
-                        <div class="form-group">
-                            <input type="text" class="form-control" id=""  placeholder="Enter your subject">
-                        </div>
-
-                        <div class="form-group">
-                            <textarea class="form-control" id="" rows="5" placeholder="Enter your message"></textarea>
-                        </div>
-
-                        <div class="text-center">
-                            <button type="submit" class="btn send-btn">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!-- End Contact form section -->
+        
+       {% block contact %}
+        {% include 'contact.html' %}
+       {% endblock contact %}
 
     {% endblock body %}
+
+   
