@@ -22,11 +22,13 @@ def index(request):
     aboutAll=AboutModel.objects.get()
     skillAll=SkillModel.objects.all()
     serviceAll=ServicesModel.objects.all()
+    handelAll=HandelModel.objects.all()
 
     content={
         'homeAll':homeAll,
         'aboutAll':aboutAll,
         'skillAll':skillAll,
-        'serviceAll':serviceAll
+        'serviceAll':serviceAll,
+        'handelAll':handelAll
     }
     return render(request,'index.html',content)

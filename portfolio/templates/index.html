@@ -132,37 +132,17 @@
         <div class="counter-up pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-counter">
-                            <i class="icofont-support"></i>
-                            <h3>220</h3>
-                            <p>Hand to Work</p>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-counter">
-                            <i class="icofont-support"></i>
-                            <h3>220</h3>
-                            <p>Hand to Work</p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
+                    {% for handel in handelAll %}
+                        <div class="col-sm-6 col-lg-3">
                             <div class="single-counter">
-                            <i class="icofont-support"></i>
-                            <h3>220</h3>
-                            <p>Hand to Work</p>
+                                <i class="icofont-support"></i>
+                                <h3>{{handel.total}}</h3>
+                                <p>{{handel.title}}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-counter">
-                            <i class="icofont-support"></i>
-                            <h3>220</h3>
-                            <p>Hand to Work</p>
-                        </div>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
