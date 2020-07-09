@@ -91,9 +91,7 @@ class TeamModel(models.Model):
 # CompamyBrand Model
 class CompamyBrandModel(models.Model):
     brand_image=models.ImageField(upload_to='Brand/')
-   
-    def __str__(self):
-        return self.title
+
 
 
 # Blog Model
