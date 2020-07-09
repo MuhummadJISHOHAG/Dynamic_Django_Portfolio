@@ -142,7 +142,7 @@
                             </div>
                         </div>
                     {% endfor %}
-                    
+
                 </div>
             </div>
         </div>
@@ -273,95 +273,41 @@
 
         <!-- Feedback slider -->
         <div class="feedback-slider owl-carousel owl-theme">
-            <div class="single-feedback-item ptb-100">
-                <div class="feedback-text-content">
-                    <div class="client-profile">
-                        <img src="assets/img/client-img.png" alt="">
-                        <h3>Michael T. Hill</h3>
-                        <p>Designer</p>
+
+            {% for client in clientAll %}
+
+                <div class="single-feedback-item ptb-100">
+                    <div class="feedback-text-content">
+                        <div class="client-profile">
+                            <img src="{{client.client_image.url}}" alt="">
+                            <h3>{{client.title}}</h3>
+                            <p>{{client.profession}}</p>
+                        </div>
+                        
+                        <p class="feedback-text">{{client.description}}</p>
+
+                        <ul>
+                            <li>
+                                <i class="icofont-star"></i>
+                            </li>
+                            <li>
+                                <i class="icofont-star"></i>
+                            </li>
+                            <li>
+                                <i class="icofont-star"></i>
+                            </li>
+                            <li>
+                                <i class="icofont-star"></i>
+                            </li>
+                            <li>
+                                <i class="icofont-star"></i>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <p class="feedback-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-
-                    <ul>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                    </ul>
                 </div>
-            </div>
 
-            <div class="single-feedback-item ptb-100">
-                <div class="feedback-text-content">
-                    <div class="client-profile">
-                        <img src="assets/img/client-img.png" alt="">
-                        <h3>Michael T. Hill</h3>
-                        <p>Designer</p>
-                    </div>
-                    
-                    <p class="feedback-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-
-                    <ul>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="single-feedback-item ptb-100">
-                <div class="feedback-text-content">
-                    <div class="client-profile">
-                        <img src="assets/img/client-img.png" alt="">
-                        <h3>Michael T. Hill</h3>
-                        <p>Designer</p>
-                    </div>
-                    
-                    <p class="feedback-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
-
-                    <ul>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                        <li>
-                            <i class="icofont-star"></i>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            {% endfor %}
+            
         </div>
         <!-- End Feedback slider -->
 
