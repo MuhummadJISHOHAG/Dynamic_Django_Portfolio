@@ -24,6 +24,7 @@ def index(request):
     serviceAll=ServicesModel.objects.all()
     handelAll=HandelModel.objects.all()
     clientAll=ClientModel.objects.all()
+    teamAll=TeamModel.objects.all()
 
     content={
         'homeAll':homeAll,
@@ -31,7 +32,8 @@ def index(request):
         'skillAll':skillAll,
         'serviceAll':serviceAll,
         'handelAll':handelAll,
-        'clientAll':clientAll
+        'clientAll':clientAll,
+        'teamAll':teamAll
 
     }
     return render(request,'index.html',content)

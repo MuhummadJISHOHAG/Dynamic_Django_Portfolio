@@ -307,7 +307,7 @@
                 </div>
 
             {% endfor %}
-            
+
         </div>
         <!-- End Feedback slider -->
 
@@ -320,45 +320,19 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-team">
-                            <img src="assets/img/team/1.jpg" alt="">
-                            <div class="team-caption">
-                                <h3>Violet R. Peters</h3>
-                                <p>Founder</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% for team in teamAll %}
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-team">
-                            <img src="assets/img/team/1.jpg" alt="">
-                            <div class="team-caption">
-                                <h3>Violet R. Peters</h3>
-                                <p>Founder</p>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="single-team">
+                                <img src="{{team.team_img.url}}" alt="">
+                                <div class="team-caption">
+                                    <h3>{{team.title}}</h3>
+                                    <p>{{team.profession}}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-team">
-                            <img src="assets/img/team/1.jpg" alt="">
-                            <div class="team-caption">
-                                <h3>Violet R. Peters</h3>
-                                <p>Founder</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="single-team">
-                            <img src="assets/img/team/1.jpg" alt="">
-                            <div class="team-caption">
-                                <h3>Violet R. Peters</h3>
-                                <p>Founder</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
