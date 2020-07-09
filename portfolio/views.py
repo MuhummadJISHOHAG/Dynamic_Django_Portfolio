@@ -18,4 +18,15 @@ from .models import (
 # Create your views here.
 
 def index(request):
-    return render(request,'index.html')
+    homeAll=HomeModel.objects.all()
+    aboutAll=AboutModel.objects.get()
+    skillAll=SkillModel.objects.all()
+    serviceAll=ServicesModel.objects.all()
+
+    content={
+        'homeAll':homeAll,
+        'aboutAll':aboutAll,
+        'skillAll':skillAll,
+        'serviceAll':serviceAll
+    }
+    return render(request,'index.html',content)

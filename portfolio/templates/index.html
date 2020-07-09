@@ -4,30 +4,22 @@
     {% block body %}
 
         <!-- Home slider -->
-        <div id="home" class="home-slider owl-carousel owl-theme"> 
-            <div class="single-slider-item item-bg1"> 
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="slider-text">
-                            <h1>Hello <br> I’M Johnny D. Dorsch</h1>
-                            <p>I am UX/UI DESIGNER</p>
-                            <a href="#" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="home" class="home-slider owl-carousel owl-theme">
 
-            <div class="single-slider-item item-bg1"> 
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="slider-text">
-                            <h1>Hello <br> I’M Johnny D. Dorsch</h1>
-                            <p>I am UX/UI DESIGNER</p>
-                            <a href="#" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
+            {% for home in homeAll %}
+                <div class="single-slider-item item-bg1"> 
+                    <div class="d-table">
+                        <div class="d-table-cell">
+                            <div class="slider-text">
+                                <h1>{{home.title}}<br>{{home.subtitle}}</h1>
+                                <p>{{home.profession}}</p>
+                                <a href="#contact" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %} 
+
         </div>
         <!-- End Home slider -->
 
@@ -36,28 +28,28 @@
             <div class="container"> 
                 <div class="section-title">
                     <h2>ABOUT ME</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
 
                 <div class="row"> 
                     <div class="col-md-6 col-lg-4"> 
                         <div class="profile-img wow zoomIn">
-                            <img src="assets/img/profile.png" alt="Profile">
+                            <img src="{{aboutAll.about_image.url}}" alt="Profile">
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-8"> 
                         <div class="about-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                            <p>{{aboutAll.description}}</p>
 
                             <div class="row">
                                 <div class="col-lg-4"> 
                                     <ul>
                                         <li>
-                                            <span>NAME :</span> Jonny D. Dorsch 
+                                            <span>NAME :</span> {{aboutAll.name}}
                                         </li>
                                         <li>
-                                            <span>AGE :</span> 21 
+                                            <span>AGE :</span>{{aboutAll.age}}
                                         </li>
                                     </ul>
                                 </div>
@@ -65,17 +57,17 @@
                                 <div class="col-lg-8"> 
                                     <ul>
                                         <li>
-                                            <span>JOB TITLE :</span> UI/UX Designer
+                                            <span>JOB TITLE :</span>{{aboutAll.job_title}}
                                         </li>
                                         <li>
-                                            <span>LOCATION :</span> California,USA
+                                            <span>LOCATION :</span> {{aboutAll.location}}
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div class="about-btn">
-                                <a href="#" class="custom-btn mr-25">DOWNLOAD CV</a>
+                                <a href="#" download class="custom-btn mr-25">DOWNLOAD CV</a>
                                 <a href="#" class="custom-btn">HIRE ME</a>
                             </div>
                         </div>
@@ -90,41 +82,22 @@
             <div class="container"> 
                 <div class="section-title white-title">
                     <h2>My skill</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-lg-4"> 
-                        <div class="single-skill wow fadeInUp" data-wow-delay=".3s">
-                            <img src="assets/img/icons/ps.png" alt="">
-                            <h3>Adobe Photoshop</h3>
+                    {% for skill in skillAll  %}
+                        <div class="col-md-6 col-lg-4"> 
+                            <div class="single-skill wow fadeInUp" data-wow-delay=".3s">
+                                <img src="{{skill.logo.url}}" alt="">
+                                <h3>{{skill.title}}</h3>
 
-                            <div class="progress">
-                                <div class="progress-bar progress-bg1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bg1" role="progressbar" style="width:{{skill.progress_bar}}%" aria-valuenow="{{skill.progress_bar}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4"> 
-                        <div class="single-skill wow fadeInUp" data-wow-delay=".6s">
-                            <img src="assets/img/icons/ai.png" alt="">
-                            <h3>Adobe illustrator</h3>
-
-                            <div class="progress">
-                                <div class="progress-bar progress-bg2" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0"> 
-                        <div class="single-skill wow fadeInUp" data-wow-delay=".9s">
-                            <img src="assets/img/icons/ae.png" alt="">
-                            <h3>Adobe after effects</h3>
-                            <div class="progress">
-                                <div class="progress-bar progress-bg3" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -135,33 +108,21 @@
             <div class="container"> 
                 <div class="section-title">
                     <h2>My Services</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
                     
                 <div class="row"> 
-                    <div class="col-md-6 col-lg-4"> 
-                        <div class="single-service">
-                            <i class="icofont-code-alt"></i>
-                            <h3>LOGO DESIGN</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                    </div>
 
-                    <div class="col-md-6 col-lg-4"> 
-                        <div class="single-service">
-                            <i class="icofont-code-alt"></i>
-                            <h3>LOGO DESIGN</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    {% for service in serviceAll  %}
+                        <div class="col-md-6 col-lg-4"> 
+                            <div class="single-service">
+                                <i class="icofont-code-alt"></i>
+                                <h3>{{service.title}}</h3>
+                                <p>{{service.description}}</p>
+                            </div>
                         </div>
-                    </div>
+                    {% endfor %}
 
-                    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0"> 
-                        <div class="single-service">
-                            <i class="icofont-code-alt"></i>
-                            <h3>LOGO DESIGN</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -212,7 +173,7 @@
             <div class="container"> 
                 <div class="section-title">
                     <h2>My Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
 
                 <ul class="portfolio-menu">
@@ -429,7 +390,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2>My Team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
 
                 <div class="row">
@@ -517,7 +478,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Blog Post</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
         
                 <div class="row">
@@ -590,7 +551,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Contact Us</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
                 </div>
 
                 <div class="contact-form">
