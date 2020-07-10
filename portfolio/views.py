@@ -21,32 +21,39 @@ from .forms import ContactForms
 # Create your views here.
 
 def index(request):
+
+    # Home Section
     homeAll=HomeModel.objects.all()
+
+    # About Section
     aboutAll=AboutModel.objects.get()
+
+    # Skill Section
     skillAll=SkillModel.objects.all()
+
+    # Service Section
     serviceAll=ServicesModel.objects.all()
+
+    # Count Section
     handelAll=HandelModel.objects.all()
+
+    # Portfolio Section
+    portfolioAll=PortfolioModel.objects.all()
+    portfolioCategoryAll=PortfolioCategoryModel.objects.all()
+
+    # Client Section
     clientAll=ClientModel.objects.all()
+
+    # Team Section
     teamAll=TeamModel.objects.all()
+
+    # Brand Section
     brandAll=CompamyBrandModel.objects.all()
+
+    # Blog Section
     blogAll=BlogModel.objects.all()
 
-    content={
-        'homeAll':homeAll,
-        'aboutAll':aboutAll,
-        'skillAll':skillAll,
-        'serviceAll':serviceAll,
-        'handelAll':handelAll,
-        'clientAll':clientAll,
-        'teamAll':teamAll,
-        'brandAll':brandAll,
-        'blogAll':blogAll
-    }
-    return render(request,'index.html',content)
-
-
-def contact(request):
-
+    
     if request.method=='POST':
         form=ContactForms(request.POST)
 
@@ -68,12 +75,24 @@ def contact(request):
 
     else:
         form=ContactForms()
-        
+    
+
     content={
+        'homeAll':homeAll,
+        'aboutAll':aboutAll,
+        'skillAll':skillAll,
+        'serviceAll':serviceAll,
+        'handelAll':handelAll,
+        'portfolioAll':portfolioAll,
+        'portfolioCategoryAll':portfolioCategoryAll,
+        'clientAll':clientAll,
+        'teamAll':teamAll,
+        'brandAll':brandAll,
+        'blogAll':blogAll,
         'form':form
     }
+    return render(request,'index.html',content)
 
-    return render(request,'contact.html',content)
 
 def send_success(request):
    return HttpResponse('thanks you for you email ^_^')

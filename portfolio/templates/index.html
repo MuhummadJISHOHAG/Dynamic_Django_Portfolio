@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-
 {% load static %}
-{% include 'contact' %}
+{% load bootstrap4 %}
+
     {% block body %}
 
         <!-- Home slider -->
@@ -14,7 +14,6 @@
                             <div class="slider-text">
                                 <h1>{{home.title}}<br>{{home.subtitle}}</h1>
                                 <p>{{home.profession}}</p>
-                                <a href="{% url 'portfolio:ContactPage' %}" class="slider-btn">HAVE PROJECT? LET’S TALK</a>
                             </div>
                         </div>
                     </div>
@@ -68,8 +67,8 @@
                             </div>
 
                             <div class="about-btn">
-                                <a href="#" download class="custom-btn mr-25">DOWNLOAD CV</a>
-                                <a href="#" class="custom-btn">HIRE ME</a>
+                                <a href="{% static 'assets/cv/Web-Developer.pdf' %}" download class="custom-btn mr-25">DOWNLOAD CV</a>
+                                <a href="#contact" class="custom-btn">HIRE ME</a>
                             </div>
                         </div>
                     </div>
@@ -158,115 +157,46 @@
                 </div>
 
                 <ul class="portfolio-menu">
-                    <li class="filter" data-filter="all">All</li>
-                    <li class="filter" data-filter=".development">DEVELOPMENT</li>
-                    <li class="filter" data-filter=".design">Design</li>
-                    <li class="filter" data-filter=".html">HTML</li>
-                    <li class="filter" data-filter=".java">Java</li>
+
+                    {% for portfolioCategory in portfolioCategoryAll %}
+
+                        {% if portfolioCategory.name == 'all' %}
+                            <li class="filter active" data-filter="{{portfolioCategory.name}}">{{portfolioCategory.name}}</li>
+                            {% else %}
+                                <li class="filter" data-filter=".{{portfolioCategory.name}}">{{portfolioCategory.name}}</li>
+                        {% endif %}
+
+                    {% endfor %}
                 </ul>
 
                 <div id="Container" class="row">
-                    <div class="col-sm-6 col-lg-4 mix development"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-6 col-lg-4 mix design"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mix html"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mix java"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mix development"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-4 mix design"> 
-                        <div class="single-portfolio">
-                            <img src="assets/img/portfolio/1.jpg" alt="Portfolio Image">
-                            <div class="portfolio-hover">
-                                <div class="d-table">
-                                    <div class="d-table-cell">
-                                        <a href="#">
-                                            <i class="icofont-search"></i>
-                                        </a>
-                                        <h3>Logo Design</h3>
-                                        <p>Designer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     {% for portfolioCategory in portfolioCategoryAll %}
+                        {% if portfolioCategory.name == 'all' %}
+                            {% else %}
+                                {% for portfolio in portfolioAll %}
+                                    {% if portfolio.category.name == portfolioCategory.name %}
+                                        <div class="col-sm-6 col-lg-4 mix {{portfolioCategory.name}}"> 
+                                            <div class="single-portfolio">
+                                                <img style="height:397px" src="{{portfolio.portfolio_image.url}}" alt="Portfolio Image">
+                                                <div class="portfolio-hover">
+                                                    <div class="d-table">
+                                                        <div class="d-table-cell">
+                                                            <a href="https://themanifest.com/software-development/python-django/companies" target="_blank" >
+                                                                <i class="icofont-search"></i>
+                                                            </a>
+                                                            <h3>{{portfolio.title}}</h3>
+                                                            <p>{{portfolio.profession}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+    
                 </div>
             </div>
         </section>
@@ -389,10 +319,34 @@
             </div>
         </section>
         <!-- End Blog Section -->
-        
-       {% block contact %}
-        {% include 'contact.html' %}
-       {% endblock contact %}
+
+        <!-- Contact form section -->
+        <section id="contact" class="contact-section ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>I am a highly talented, experienced, professional and cooperative software engineer,I am working in programming and web world.</p>
+                </div>
+
+                <div class="contact-form">
+                    <form method="POST">
+                    
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        {% buttons %}
+
+                            <div class="text-center">
+                                <button type="submit" class="btn send-btn">Send Message</button>
+                            </div>
+
+                        {% endbuttons %}
+    
+
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact form section -->
 
     {% endblock body %}
 

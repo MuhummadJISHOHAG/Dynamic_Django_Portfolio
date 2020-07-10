@@ -19,6 +19,7 @@ class AboutModel(models.Model):
     age=models.IntegerField(default=20)
     job_title=models.CharField(max_length=200)
     location=models.CharField(max_length=200)
+    cv=models.FileField(upload_to='About/')
 
     def __str__(self):
         return self.name
